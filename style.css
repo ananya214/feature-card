@@ -1,0 +1,245 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.card {
+  width: 350px;
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.303);
+}
+
+.card.green {
+  background-color: #e83f25;
+}
+
+.card.blue {
+  background-color: #5c8ee6;
+}
+
+.card.purple {
+  background-color: #ce93d8;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-header {
+  padding: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.card-header p {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+}
+
+.image-section {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.plus-button {
+  width: 50px;
+  height: 50px;
+  background-color: #004d40;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .plus-button {
+  opacity: 0;
+}
+
+.card-details {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(3px);
+  color: white;
+  padding: 30px 24px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:hover {
+  width: 600px;
+  height: 500px;
+}
+
+.card:hover .card-video {
+  display: block;
+}
+
+.card:hover .card-details {
+  left: 50%;
+  opacity: 1;
+}
+
+.card:hover img {
+  display: none;
+}
+
+.card-details ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.card-details li {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.card-details li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: white;
+}
+
+.card-details strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.view-details-btn {
+  background-color: #004d40;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  margin-top: 15px;
+}
+
+.view-details-btn:hover {
+  background-color: #e83f25;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .card:hover {
+    width: 100%;
+  }
+
+  .card-details {
+    left: 0;
+    top: 100%;
+    width: 100%;
+  }
+
+  .card:hover .card-details {
+    left: 0;
+    top: 0;
+  }
+}
+
+.card:hover .image-section img {
+  display: none;
+}
+
+.card:hover .plus-button {
+  display: none;
+}
+
+.card:hover .details {
+  display: block;
+}
+
+.card:hover .image-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("C:\Users\raj00\OneDrive\Desktop\card\mixkit-office-worker-enjoying-a-toasted-sandwich-at-work-48723-hd-ready (1).mp4")
+    no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.details {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #a62c2c;
+  color: white;
+  padding: 20px;
+  display: none;
+}
+
+.card-video {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
